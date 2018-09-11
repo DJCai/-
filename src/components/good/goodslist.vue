@@ -65,9 +65,9 @@
                             </div> -->
                             <el-carousel style="height:100%;"  arrow="always">
                                 <el-carousel-item style="height:100%;" v-for="item in goodslistData.sliderlist" :key="item.id">
-                                    <a href="/goods.html">
+                                    <router-link :to="'/goodsinfo/'+item.id">
                                         <img style="width:100%;height:100%;" v-lazy="item.img_url" draggable="false">
-                                    </a>
+                                    </router-link>
                                 </el-carousel-item>
                             </el-carousel>
                         </div>
@@ -81,7 +81,7 @@
                                     <img v-lazy="item.img_url">
                                 </div>
                                 <div class="txt-box">
-                                    <a href="/goods/show-98.html">{{item.title}}</a>
+                                    <router-link :to="'/goodsinfo/'+item.id">{{item.title}}</router-link>
                                     <span>{{item.add_time | dateFmt}}</span>
                                 </div>
                             </li>
@@ -104,7 +104,7 @@
                 <div class="wrap-box">
                     <ul class="img-list">
                         <li v-for="subitem in item.datas" :key="subitem.artID">
-                            <a href="#/site/goodsinfo/87" class="">
+                           <router-link :to="'/goodsinfo/'+subitem.artID">
                                 <div class="img-box">
                                     <img v-lazy="subitem.img_url">
                                 </div>
@@ -119,7 +119,7 @@
                                         </span>
                                     </p>
                                 </div>
-                            </a>
+                            </router-link>
                         </li>
                     </ul>
                 </div>
@@ -138,8 +138,8 @@
 export default {
   data() {
     return {
-      goodslistData: {},
-      goodsGroupData:[]
+      goodslistData: {},  //商品列表的数据
+      goodsGroupData:[]   //分类分组数据
     };
   },
   created() {

@@ -22,8 +22,7 @@ Vue.use(VueLazyload,{
 import router from './router'
 
 //导入过滤器
-
-
+import './filters'
 
 new Vue({
   router,
