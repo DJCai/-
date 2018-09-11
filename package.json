@@ -1,6 +1,6 @@
 {
-  "name": "szhmqd21_vue",
-  "version": "0.1.0",
+  "name": "mini_shopping_website",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
